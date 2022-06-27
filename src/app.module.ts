@@ -37,15 +37,15 @@ export class AppModule implements NestModule {
     consumer
       .apply(AuthenticationMiddleware)
       .exclude(
-        { path: 'api/v1/users/create', method: RequestMethod.POST },
-        { path: 'api/v1/auth/login', method: RequestMethod.POST },
-        { path: 'api/v1/auth/forgot-password', method: RequestMethod.ALL },
+        { path: 'users/create', method: RequestMethod.POST },
+        { path: 'auth/login', method: RequestMethod.POST },
+        { path: 'auth/forgot-password', method: RequestMethod.ALL },
         {
-          path: 'api/v1/auth/reset-password',
+          path: 'auth/reset-password',
           method: RequestMethod.ALL,
         },
         {
-          path: 'api/v1/auth/verify-email',
+          path: 'auth/verify-email',
           method: RequestMethod.PATCH,
         },
       )

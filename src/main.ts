@@ -19,7 +19,6 @@ async function bootstrap() {
     }),
   );
   app.use(morgan('dev'));
-  app.setGlobalPrefix('/api/v1');
   await app.listen(port);
 }
 bootstrap();
